@@ -1,0 +1,136 @@
+@use "./partials/mixins" as *;
+@use "./partials/varibles" as *;
+@use "./partials/globals" as *;
+
+// -----header style------
+.header{
+    display: flex;
+    flex-direction: column;
+    background-color: $primary-black;
+    &__title{
+        height:1.25rem;
+        color:$primary-white;
+        padding: 1.5rem;
+        margin: 1rem;
+        text-align: center;
+    }
+    &__nav{
+       
+        &__lists{
+            display: flex;
+            flex-direction: row;
+        }
+        &__list{
+            color:$secondary-mercury;
+            list-style: none;
+            padding-left: 8rem;
+            padding-right: 8rem;
+            transition: border-bottom 0.3s ease;
+            padding-bottom: 0.5rem;
+        }
+       
+        &__list:hover{
+            color:white;
+            font-weight: bold;
+            border-bottom: 5px solid white;
+        }
+    }
+}
+
+// -------hero section------
+.hero{
+    padding-top:1rem;
+    background-image: url("../assets/images/hero-bio.jpg");
+    background-size: cover;
+    height: 25rem;
+    &__title{
+        color: $primary-white;
+        text-align: center;
+        position: absolute;
+        top:16.875rem;
+        margin-left: 2rem;
+    }
+}
+
+// -----description section-----
+.description{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    &__title{
+        padding:1rem;
+        
+   }
+   &__img{
+    height:20rem;
+   }
+   &__para{
+    font-weight: 700;
+    padding-top: 1rem;;
+   }
+}
+
+// ------article section---
+
+.article{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    &__title{
+        padding-bottom: 1rem;
+    }
+    &__para{
+        padding-bottom: 1.5rem;
+    }
+}
+
+// -------Photo gallery-------
+
+.gallery{
+    display: flex;
+    flex-direction: column;
+   
+    background-color:$secondary-alabaster;
+    &__title{
+        margin: 1rem;
+    }
+    &__img{
+        height:20rem;
+        margin: 1rem;
+    }
+}
+
+// ------footer-----------
+.footer{
+    display: flex;
+    flex-direction: column;
+    color:white;
+    background-color:$secondary-black;
+    &__title{
+        margin: 1rem;
+        
+    }
+    &__social-logo{
+        display: flex;
+        flex-direction: row;
+        margin: 1rem;
+       
+        }
+    &__icon{
+       padding-right: 1.5rem;
+    }
+    &__list{
+        margin: 1rem;
+        list-style: none;
+        &__title{
+            padding-bottom: 1rem;
+        }
+        &__para{
+            padding-bottom: 1rem;
+        }
+    }
+    &__para{
+    margin-left: 1rem;
+    margin-bottom: 1rem;
+    }
+}
