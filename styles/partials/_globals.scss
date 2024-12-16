@@ -48,7 +48,7 @@ p {
   line-height: 1.125rem;
   font-weight: 400;
 }
-@include tablet {
+@include tablet-and-desktop {
   body {
     font-size: 0.875rem;
     line-height: 1.375rem;

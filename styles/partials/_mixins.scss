@@ -1,16 +1,9 @@
 @use "./varibles" as *;
 
 
-@mixin tablet {
-   
-    @media screen and (min-width: $tablet-breakpoint1){
-        @content;
-    }
-}
 
-@mixin desktop {
-   
-    @media screen and (min-width:$desktop-breakpoint) {
-        @content;
+@mixin tablet-and-desktop {
+    @media (min-width: $tablet-breakpoint1) and (max-width: $tablet-breakpoint2), (min-width: $desktop-breakpoint) {
+      @content;
     }
-}
+  }
