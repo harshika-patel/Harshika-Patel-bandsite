@@ -4,9 +4,9 @@
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
 }
 
 body {
@@ -22,7 +22,6 @@ h1 {
   font-size: 1.5rem;
   line-height: 2rem;
   font-weight: 700;
-  
 }
 h2 {
   font-size: 1.5rem;
@@ -44,7 +43,11 @@ button {
   line-height: 1.25rem;
   font-weight: 700;
 }
-
+p {
+  font-size: 0.9375rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+}
 @include tablet {
   body {
     font-size: 0.875rem;

@@ -8,23 +8,24 @@
     flex-direction: column;
     background-color: $primary-black;
     &__title{
-        height:1.25rem;
         color:$primary-white;
-        padding: 1.5rem;
+       
         margin: 1rem;
         text-align: center;
     }
+    a{ text-decoration: none;}
     &__nav{
        
         &__lists{
             display: flex;
             flex-direction: row;
+            justify-content: space-evenly;
         }
         &__list{
             color:$secondary-mercury;
             list-style: none;
-            padding-left: 8rem;
-            padding-right: 8rem;
+            width: 50%;
+            text-align: center;
             transition: border-bottom 0.3s ease;
             padding-bottom: 0.5rem;
         }
@@ -97,7 +98,14 @@
     &__img{
         height:20rem;
         margin: 1rem;
-    }
+        width: 100%;
+        transition: filter 0.3s ease; 
+        filter: grayscale(100%);
+        }
+        &__img:hover {
+            filter: grayscale(0%); 
+        }
+    
 }
 
 // ------footer-----------
@@ -106,6 +114,10 @@
     flex-direction: column;
     color:white;
     background-color:$secondary-black;
+    a{
+        text-decoration: none;
+        color: white;
+    }
     &__title{
         margin: 1rem;
         
@@ -132,5 +144,110 @@
     &__para{
     margin-left: 1rem;
     margin-bottom: 1rem;
+    }
+}
+
+@include tablet
+{
+    .header{
+        display: flex;
+        flex-direction: row;
+        &__title{ 
+            margin-left:1rem;
+            padding: 0.5rem;
+            padding-top:1.5rem;
+        }
+        &__nav{
+            &__lists{
+                display: flex;
+                flex-direction: row;
+            }
+            &__list{
+                margin-top:1.5rem;
+                padding:2rem;
+            }
+        }
+     }
+     .description{ 
+            width: 90%;
+            margin-left:auto;
+            margin-right:auto;
+        &__img{
+            width:80%;
+            height: 25rem;
+            margin-left:auto;
+            margin-right:auto;
+            margin-top:1rem;
+            margin-bottom:1rem;
+            }
+        &__para{
+            width:80%;
+            margin-left:auto;
+            margin-right:auto;
+        }
+    }
+    .article{
+            display: flex;
+            flex-direction: column;
+            width: 90%;
+            margin-left:auto;
+            margin-right:auto;
+        &__title{
+            width: 80%;
+            margin-left:auto;
+            margin-right:auto;
+        }
+       &__paras{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 80%;
+            margin-left:auto;
+            margin-right:auto;
+       }
+       &__para{
+        width: 80%;
+        margin-left:auto;
+        margin-right:auto;
+        }
+      
+    }
+    .gallery{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        margin-left:1rem;
+        padding: 0.5rem;
+        &__img{
+        width:30%;
+        height:230px;
+        }
+    }
+    .footer{
+        
+        margin-left:1rem;
+        padding: 1rem;
+        &__row1{
+        display: flex;
+        flex-direction: row;
+        
+        }
+        &__title{
+            width: 20%;
+            &--modifier{
+             position: relative;
+             top:-14rem;
+             right:-60rem;
+            }
+        }
+        &__icon{
+           padding:0.5rem;
+           margin-left:1rem;
+        }
+        &__lists{
+            display: flex;
+            flex-direction: row;
+            margin-right:1rem;
+        }
     }
 }
