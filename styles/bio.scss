@@ -3,251 +3,244 @@
 @use "./partials/globals" as *;
 
 // -----header style------
-.header{
-    display: flex;
-    flex-direction: column;
-    background-color: $primary-black;
-    &__title{
-        color:$primary-white;
-       
-        margin: 1rem;
-        text-align: center;
+.header {
+  display: flex;
+  flex-direction: column;
+  background-color: $primary-black;
+  &__title {
+    color: $primary-white;
+
+    margin: 1rem;
+    text-align: center;
+  }
+  a {
+    text-decoration: none;
+  }
+  &__nav {
+    &__lists {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-evenly;
     }
-    a{ text-decoration: none;}
-    &__nav{
-       
-        &__lists{
-            display: flex;
-            flex-direction: row;
-            justify-content: space-evenly;
-        }
-        &__list{
-            color:$secondary-mercury;
-            list-style: none;
-            width: 50%;
-            text-align: center;
-            transition: border-bottom 0.3s ease;
-            padding-bottom: 0.5rem;
-        }
-       
-        &__list:hover{
-            color:white;
-            font-weight: bold;
-            border-bottom: 5px solid white;
-        }
+    &__list {
+      color: $secondary-mercury;
+      list-style: none;
+      width: 50%;
+      text-align: center;
+      transition: border-bottom 0.3s ease;
+      padding-bottom: 0.5rem;
     }
+
+    &__list:hover {
+      color: white;
+      font-weight: bold;
+      border-bottom: 5px solid white;
+    }
+  }
 }
 
 // -------hero section------
-.hero{
-    padding-top:1rem;
-    background-image: url("../assets/images/hero-bio.jpg");
-    background-size: cover;
-    height: 25rem;
-    &__title{
-        color: $primary-white;
-        text-align: center;
-        position: absolute;
-        top:16.875rem;
-        margin-left: 2rem;
-    }
+.hero {
+  padding-top: 1rem;
+  background-image: url("../assets/images/hero-bio.jpg");
+  background-size: cover;
+  height: 25rem;
+  &__title {
+    color: $primary-white;
+    text-align: center;
+    position: absolute;
+    top: 16.875rem;
+    margin-left: 2rem;
+  }
 }
 
 // -----description section-----
-.description{
-    display: flex;
-    flex-direction: column;
-    margin: 1rem;
-    &__title{
-        padding:1rem;
-        
-   }
-   &__img{
-    height:20rem;
-   }
-   &__para{
+.description {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  &__title {
+    padding: 1rem;
+  }
+  &__img {
+    height: 20rem;
+  }
+  &__para {
     font-weight: 700;
-    padding-top: 1rem;;
-   }
+    padding-top: 1rem;
+  }
 }
 
 // ------article section---
 
-.article{
-    display: flex;
-    flex-direction: column;
-    margin: 1rem;
-    &__title{
-        padding-bottom: 1rem;
-    }
-    &__para{
-        padding-bottom: 1.5rem;
-    }
+.article {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  &__title {
+    padding-bottom: 1rem;
+  }
+  &__para {
+    padding-bottom: 1.5rem;
+  }
 }
 
 // -------Photo gallery-------
 
-.gallery{
-    display: flex;
-    flex-direction: column;
-   
-    background-color:$secondary-alabaster;
-    &__title{
-        margin: 1rem;
-    }
-    &__img{
-        height:20rem;
-        margin: 1rem;
-        width: 100%;
-        transition: filter 0.3s ease; 
-        filter: grayscale(100%);
-        }
-        &__img:hover {
-            filter: grayscale(0%); 
-        }
-    
+.gallery {
+  display: flex;
+  flex-direction: column;
+
+  background-color: $secondary-alabaster;
+  &__title {
+    margin: 1rem;
+  }
+  &__img {
+    height: 20rem;
+    margin: 1rem;
+    width: 100%;
+    transition: filter 0.3s ease;
+    filter: grayscale(100%);
+  }
+  &__img:hover {
+    filter: grayscale(0%);
+  }
 }
 
 // ------footer-----------
-.footer{
+.footer {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  background-color: $secondary-black;
+  a {
+    text-decoration: none;
+    color: white;
+  }
+  &__title {
+    margin: 1rem;
+  }
+  &__social-logo {
     display: flex;
-    flex-direction: column;
-    color:white;
-    background-color:$secondary-black;
-    a{
-        text-decoration: none;
-        color: white;
+    flex-direction: row;
+    margin: 1rem;
+  }
+  &__icon {
+    padding-right: 1.5rem;
+  }
+  &__list {
+    margin: 1rem;
+    list-style: none;
+    &__title {
+      padding-bottom: 1rem;
     }
-    &__title{
-        margin: 1rem;
-        
+    &__para {
+      padding-bottom: 1rem;
     }
-    &__social-logo{
-        display: flex;
-        flex-direction: row;
-        margin: 1rem;
-       
-        }
-    &__icon{
-       padding-right: 1.5rem;
-    }
-    &__list{
-        margin: 1rem;
-        list-style: none;
-        &__title{
-            padding-bottom: 1rem;
-        }
-        &__para{
-            padding-bottom: 1rem;
-        }
-    }
-    &__para{
+  }
+  &__para {
     margin-left: 1rem;
     margin-bottom: 1rem;
-    }
+  }
 }
 
-@include tablet
-{
-    .header{
+@include tablet-and-desktop {
+  .header {
+    display: flex;
+    flex-direction: row;
+    &__title {
+      margin-left: 1rem;
+      padding: 0.5rem;
+      padding-top: 1.5rem;
+    }
+    &__nav {
+      &__lists {
         display: flex;
         flex-direction: row;
-        &__title{ 
-            margin-left:1rem;
-            padding: 0.5rem;
-            padding-top:1.5rem;
-        }
-        &__nav{
-            &__lists{
-                display: flex;
-                flex-direction: row;
-            }
-            &__list{
-                margin-top:1.5rem;
-                padding:2rem;
-            }
-        }
-     }
-     .description{ 
-            width: 90%;
-            margin-left:auto;
-            margin-right:auto;
-        &__img{
-            width:80%;
-            height: 25rem;
-            margin-left:auto;
-            margin-right:auto;
-            margin-top:1rem;
-            margin-bottom:1rem;
-            }
-        &__para{
-            width:80%;
-            margin-left:auto;
-            margin-right:auto;
-        }
+      }
+      &__list {
+        margin-top: 1.5rem;
+        padding: 2rem;
+      }
     }
-    .article{
-            display: flex;
-            flex-direction: column;
-            width: 90%;
-            margin-left:auto;
-            margin-right:auto;
-        &__title{
-            width: 80%;
-            margin-left:auto;
-            margin-right:auto;
-        }
-       &__paras{
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            width: 80%;
-            margin-left:auto;
-            margin-right:auto;
-       }
-       &__para{
-        width: 80%;
-        margin-left:auto;
-        margin-right:auto;
-        }
-      
+  }
+  .description {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    &__img {
+      width: 80%;
+      height: 25rem;
+      margin-left: auto;
+      margin-right: auto;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
     }
-    .gallery{
-        display: flex;
-        flex-direction: row;
-        flex-wrap: wrap;
-        margin-left:1rem;
-        padding: 0.5rem;
-        &__img{
-        width:30%;
-        height:230px;
-        }
+    &__para {
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
     }
-    .footer{
-        
-        margin-left:1rem;
-        padding: 1rem;
-        &__row1{
-        display: flex;
-        flex-direction: row;
-        
-        }
-        &__title{
-            width: 20%;
-            &--modifier{
-             position: relative;
-             top:-14rem;
-             right:-60rem;
-            }
-        }
-        &__icon{
-           padding:0.5rem;
-           margin-left:1rem;
-        }
-        &__lists{
-            display: flex;
-            flex-direction: row;
-            margin-right:1rem;
-        }
+  }
+  .article {
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    &__title {
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
     }
+    &__paras {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    &__para {
+      width: 80%;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  .gallery {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 1rem;
+    padding: 0.5rem;
+    &__img {
+      width: 30%;
+      height: 230px;
+    }
+  }
+  .footer {
+    margin-left: 1rem;
+    padding: 1rem;
+    &__row1 {
+      display: flex;
+      flex-direction: row;
+    }
+    &__title {
+      width: 20%;
+      &--modifier {
+        position: relative;
+        top: -14rem;
+        right: -60rem;
+      }
+    }
+    &__icon {
+      padding: 0.5rem;
+      margin-left: 1rem;
+    }
+    &__lists {
+      display: flex;
+      flex-direction: row;
+      margin-right: 1rem;
+    }
+  }
 }
