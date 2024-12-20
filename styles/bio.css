@@ -133,6 +133,7 @@ p {
   display: flex;
   flex-direction: column;
   margin: 1rem;
+  color: #323232;
 }
 .description__title {
   padding: 1rem;
@@ -160,6 +161,7 @@ p {
 .gallery {
   display: flex;
   flex-direction: column;
+  color: #323232;
   background-color: #FAFAFA;
 }
 .gallery__title {
@@ -180,7 +182,7 @@ p {
   display: flex;
   flex-direction: column;
   color: white;
-  background-color: #000000;
+  background-color: #323232;
 }
 .footer a {
   text-decoration: none;
