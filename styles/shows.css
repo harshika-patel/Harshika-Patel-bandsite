@@ -217,11 +217,21 @@ p {
 }
 
 @media (min-width: 768px) {
+  .show {
+    width: 100%;
+  }
   .show__display {
+    width: 100%;
     flex-direction: row;
     justify-content: space-between;
     font-size: 0.875rem;
     margin: 1rem;
+    padding: 0.75rem;
+    border-bottom: 1px solid #e1e1e1;
+  }
+  .label__div {
+    color: #e1e1e1;
+    background-color: orange;
   }
   .shows__title {
     margin-bottom: 2rem;
@@ -234,6 +244,9 @@ p {
     font-size: 0.875rem;
     margin: 0;
   }
+  .shows-divider {
+    visibility: hidden;
+  }
   .show__date {
     margin-left: 0;
   }
@@ -242,10 +255,6 @@ p {
   }
   .show__location {
     margin-left: 0;
-  }
-  .shows-divider {
-    stroke-width: 1px;
-    background-color: #e1e1e1;
   }
 }
 @media (min-width: 1280px) {

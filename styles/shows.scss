@@ -8,63 +8,60 @@
   background-size: cover;
   display: flex;
   flex-direction: column;
-  &__col1{
+  &__col1 {
     display: flex;
     flex-direction: column;
-  
-  &__text {
-    color: $primary-white;
-    margin-top: 1rem;
-    margin-left: 1.5rem;
-    margin-bottom: 1rem;
-    z-index: 2;
-    transform: translateY(-50%);
+
+    &__text {
+      color: $primary-white;
+      margin-top: 1rem;
+      margin-left: 1.5rem;
+      margin-bottom: 1rem;
+      z-index: 2;
+      transform: translateY(-50%);
+    }
+
+    &__heading {
+      top: 12%;
+      margin-left: 1.5rem;
+      line-height: normal;
+    }
   }
-  
-  &__heading {
-    top: 12%;
-    margin-left: 1.5rem;
-    line-height: normal;
-  }
-}
   &__col2 {
     display: flex;
     flex-direction: column;
-    &__audio{
-  
-    margin: 1rem;
-    z-index: 2;
+    &__audio {
+      margin: 1rem;
+      z-index: 2;
     }
   }
 }
-@include tablet{
-    .hero__col2{
-        &__audio{
-        width: 70%;
-        margin-top: 0;
-       
+@include tablet {
+  .hero__col2 {
+    &__audio {
+      width: 70%;
+      margin-top: 0;
     }
+  }
 }
-}
-@include desktop{
-.hero{
+@include desktop {
+  .hero {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    &__col1{
-        width: 70%;
-        margin-right: 5rem;
-        &__text{
-            margin-bottom: 1.5rem;
-            padding: 1rem 0;
-            padding-right:1rem;
-        }
+    &__col1 {
+      width: 70%;
+      margin-right: 5rem;
+      &__text {
+        margin-bottom: 1.5rem;
+        padding: 1rem 0;
+        padding-right: 1rem;
+      }
     }
-    &__col2{
-        width:100%
+    &__col2 {
+      width: 100%;
     }
-}
-
+  }
 }
 // -----shows display-----
 .shows__title {
@@ -75,7 +72,6 @@
 .show__display {
   display: flex;
   flex-direction: column;
- 
 }
 
 .show__date {
@@ -114,60 +110,61 @@
   background-color: #000000;
 }
 
-.show__display:hover{
-    background-color: $secondary-alabaster;
+.show__display:hover {
+  background-color: $secondary-alabaster;
 }
-.show__display:active{
-    background-color: $secondary-mercury;
+.show__display:active {
+  background-color: $secondary-mercury;
 }
 @include tablet {
+  .show{
+    width: 100%;
+  }
   .show__display {
+    width: 100%;
     flex-direction: row;
     justify-content: space-between;
     font-size: 0.875rem;
     margin: 1rem;
+    padding: 0.75rem;
+    border-bottom: 1px solid $secondary-mercury;
   }
-  .shows__title{
+  .label__div {
+    color: $secondary-mercury;
+    background-color: orange;
+  }
+  .shows__title {
     margin-bottom: 2rem;
   }
-  .label{
+  .label {
     visibility: hidden;
   }
-  
- 
-  .show__buy-ticket{
+  .show__buy-ticket {
     width: 9.375rem;
     font-size: 0.875rem;
-    margin:0;
+    margin: 0;
+  }
+  .shows-divider {
+    visibility: hidden;
   }
   .show__date {
-    
-    margin-left:0;
-   
+    margin-left: 0;
   }
   .show__venue {
-  
     margin-left: 0;
   }
   .show__location {
-    
     margin-left: 0;
   }
-  .shows-divider {
-   
-    stroke-width: 1px;
-    background-color: $secondary-mercury;
-  }
-  
 }
-@include desktop{
-    .shows{
-        width: 100%;
-        display: flex;
-        flex-direction: row;
-        margin: 1rem;
-    }
-    .show__buy-ticket {
-        margin-left: 2rem;
-    }
+@include desktop {
+  .shows {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin: 1rem;
+  }
+  .show__buy-ticket {
+    margin-left: 2rem;
+  }
 }
