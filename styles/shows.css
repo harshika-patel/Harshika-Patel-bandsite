@@ -171,23 +171,28 @@ p {
 .show__date {
   font-size: 0.8125rem;
   font-weight: 700;
+  margin-left: 1rem;
   color: #323232;
 }
 
 .show__venue {
   font-size: 0.8125rem;
   color: #323232;
+  margin-left: 1rem;
 }
 
 .show__location {
   font-size: 0.8125rem;
   color: #323232;
+  margin-left: 1rem;
 }
 
 .label {
   color: #e1e1e1;
   font-size: 0.875rem;
   padding: 0.5rem;
+  margin-left: 1rem;
+  padding-left: 0;
 }
 
 .show__buy-ticket {
@@ -203,18 +208,54 @@ p {
   background-color: #000000;
 }
 
+.show__display:hover {
+  background-color: #FAFAFA;
+}
+
+.show__display:active {
+  background-color: #e1e1e1;
+}
+
 @media (min-width: 768px) {
   .show__display {
     flex-direction: row;
     justify-content: space-between;
+    font-size: 0.875rem;
+    margin: 1rem;
   }
-  .shows-divider {
-    flex-direction: row;
-    stroke-width: 1px;
-    background-color: #e1e1e1;
+  .shows__title {
+    margin-bottom: 2rem;
+  }
+  .label {
+    visibility: hidden;
   }
   .show__buy-ticket {
     width: 9.375rem;
     font-size: 0.875rem;
+    margin: 0;
+  }
+  .show__date {
+    margin-left: 0;
+  }
+  .show__venue {
+    margin-left: 0;
+  }
+  .show__location {
+    margin-left: 0;
+  }
+  .shows-divider {
+    stroke-width: 1px;
+    background-color: #e1e1e1;
+  }
+}
+@media (min-width: 1280px) {
+  .shows {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin: 1rem;
+  }
+  .show__buy-ticket {
+    margin-left: 2rem;
   }
 }/*# sourceMappingURL=shows.css.map */

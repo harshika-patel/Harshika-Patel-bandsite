@@ -60,18 +60,17 @@ const shows = [
 
     const divider = document.createElement("hr");
     divider.classList.add("shows-divider");
-  
-    cardElement.appendChild(pTag1);
-    cardElement.appendChild(pTag2);
-    cardElement.appendChild(pTag3);
     cardElement.appendChild(label1);
+    cardElement.appendChild(pTag1);
+    cardElement.appendChild(divider);
     cardElement.appendChild(label2);
+    cardElement.appendChild(pTag2);
+    cardElement.appendChild(divider);
     cardElement.appendChild(label3);
+    cardElement.appendChild(pTag3);
     cardElement.appendChild(buttonTag);
     cardElement.appendChild(divider);
-    label1.appendChild(pTag1);
-    label2.appendChild(pTag2);
-    label3.appendChild(pTag3);
+    
     
     console.log(cardElement);
     return cardElement;
