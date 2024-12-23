@@ -1,6 +1,6 @@
 @use "./mixins" as *;
 @use "./varibles" as *;
-
+@use "./fonts" as *;
 *,
 *::before,
 *::after {
@@ -48,7 +48,7 @@ p {
   line-height: 1.125rem;
   font-weight: 400;
 }
-@include tablet-and-desktop {
+@include tablet{
   body {
     font-size: 0.875rem;
     line-height: 1.375rem;

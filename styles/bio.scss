@@ -7,6 +7,7 @@
   display: flex;
   flex-direction: column;
   background-color: $primary-black;
+
   &__title {
     color: $primary-white;
     margin: 1rem;
@@ -31,7 +32,7 @@
     }
 
     &__list:hover {
-      color: white;
+      color: $primary-white;
       font-weight: bold;
       border-bottom: 5px solid white;
     }
@@ -43,14 +44,30 @@
   padding-top: 1rem;
   background-image: url("../assets/images/hero-bio.jpg");
   background-size: cover;
+  position: relative;
+  background-position: center;
+  background-repeat: no-repeat;
   height: 25rem;
   &__title {
     color: $primary-white;
-    text-align: center;
-    position: absolute;
-    top: 16.875rem;
+    position: relative;
+    z-index: 2;
+    top: 50%;
+    font-size: xxx-large;
     margin-left: 2rem;
+    transform: translateY(-50%);
   }
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0.5;
+  z-index: 1;
 }
 
 // -----description section-----
@@ -58,7 +75,7 @@
   display: flex;
   flex-direction: column;
   margin: 1rem;
-  color:$primary-black;
+  color: $primary-black;
   &__title {
     padding: 1rem;
   }
@@ -90,7 +107,7 @@
 .gallery {
   display: flex;
   flex-direction: column;
-  color:$primary-black;
+  color: $primary-black;
   background-color: $secondary-alabaster;
   &__title {
     margin: 1rem;
@@ -99,11 +116,148 @@
     height: 20rem;
     margin: 1rem;
     width: 100%;
+    object-fit: cover;
     transition: filter 0.3s ease;
     filter: grayscale(100%);
   }
   &__img:hover {
     filter: grayscale(0%);
+  }
+}
+// --------comment form------------
+
+.comment {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  margin-left: 1rem;
+  &__title {
+    margin-left: 0.875rem;
+  }
+  &__profile {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    &--img {
+      border-radius: 50%;
+      background-size: cover;
+
+      position: relative;
+      top: 2rem;
+      width: 2.25rem;
+      height: 2.25rem;
+      margin-left: 0.875rem;
+    }
+  }
+  &__form {
+    display: flex;
+    flex-direction: column;
+    padding: 0.75rem;
+    width: 100%;
+    &-label {
+      color: $secondary-mercury;
+      font-size: 0.875rem;
+      font-weight: 700;
+    }
+    &-input {
+      padding: 0.75rem;
+      height: 2.25rem;
+    }
+  }
+  @include tablet {
+    .comment__form-input {
+      height: 3rem;
+      padding:1rem;
+    }
+    .comment__profile--img {
+      margin-left: 3rem;
+    }
+  }
+  
+  &-field {
+    margin-bottom: 0.75rem;
+    border-radius: 4px;
+    background-color: lightgray;
+    border: 1px solid $secondary-mercury;
+    padding: 0.875rem;
+  }
+  &-field:active {
+    border: 1px solid $primary-black;
+  }
+  &-btn {
+    background-color: $primary-black;
+    color: $primary-white;
+    padding: 0.875rem;
+    border-radius: 4px;
+  }
+  &-btn:hover {
+    background-color: #000000;
+    color: $primary-white;
+  }
+}
+
+@include tablet {
+  .comment-btn {
+    width: 9.375rem;
+    align-self: end;
+  }
+}
+
+
+//----display comments-------
+
+.comment__display {
+  display: flex;
+  flex-direction: column;
+  margin-top: 1rem;
+  margin-left: 1rem;
+}
+.comment__row1 {
+  display: flex;
+  flex-direction: row;
+}
+
+.comment__profile-img {
+  height: 2.25rem;
+  width: 2.25rem;
+  border-radius: 50%;
+  background-color: $secondary-mercury;
+  margin-right: 1rem;
+}
+.comment__name {
+  margin-right: 1rem;
+  font-weight: 700;
+  width: 25%;
+}
+
+.comment__date {
+  margin-bottom: 1rem;
+  margin-right: 1.5rem;
+  width: 75%;
+  text-align: right;
+  color: $secondary-mercury;
+}
+.comment__description {
+  margin-left: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+.comment-divider {
+  stroke-width: 1px;
+  background-color: $secondary-mercury;
+}
+@include tablet {
+  .comment__name {
+    width: 35%;
+    font-size: 1rem;
+  }
+  .comment__profile-img {
+    height: 3rem;
+    width: 3rem;
+    margin-left: 3rem;
+  }
+  .comment__description {
+    margin-left: 3.2rem;
   }
 }
 
@@ -112,6 +266,7 @@
   display: flex;
   flex-direction: column;
   color: white;
+  margin-top: 1rem;
   background-color: $primary-black;
   a {
     text-decoration: none;
@@ -144,9 +299,8 @@
   }
 }
 
-@include tablet-and-desktop {
+@include tablet {
   .header {
-    display: flex;
     flex-direction: row;
     &__title {
       margin-left: 1rem;
@@ -154,10 +308,6 @@
       padding-top: 1.5rem;
     }
     &__nav {
-      &__lists {
-        display: flex;
-        flex-direction: row;
-      }
       &__list {
         margin-top: 1.5rem;
         padding: 2rem;
@@ -165,57 +315,44 @@
     }
   }
   .description {
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
+
     &__img {
       width: 80%;
       height: 25rem;
-      margin-left: auto;
-      margin-right: auto;
-      margin-top: 1rem;
-      margin-bottom: 1rem;
+      margin: 1rem auto;
     }
     &__para {
       width: 80%;
-      margin-left: auto;
-      margin-right: auto;
+      margin: 0 auto;
+      margin-bottom: 1.5rem;
     }
   }
   .article {
-    display: flex;
-    flex-direction: column;
-    width: 90%;
-    margin-left: auto;
-    margin-right: auto;
+    margin: 0 auto;
     &__title {
       width: 80%;
-      margin-left: auto;
-      margin-right: auto;
+      margin: 0 auto;
     }
     &__paras {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
       width: 80%;
-      margin-left: auto;
-      margin-right: auto;
+      margin: 0 auto;
     }
     &__para {
       width: 80%;
-      margin-left: auto;
-      margin-right: auto;
+      margin: 0 auto;
     }
   }
   .gallery {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
     margin-left: 1rem;
     padding: 0.5rem;
+
     &__img {
-      width: 30%;
-      height: 230px;
+      width: 25%;
+      height: 12rem;
     }
   }
   .footer {
@@ -226,11 +363,13 @@
       flex-direction: row;
     }
     &__title {
-      width: 20%;
       &--modifier {
-        position: relative;
-        top: -14rem;
-        right: -60rem;
+        position: absolute;
+        bottom: auto;
+        right: 10px;
+        left: auto;
+
+        transform: none;
       }
     }
     &__icon {
