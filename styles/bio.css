@@ -127,6 +127,10 @@ p {
   transition: border-bottom 0.3s ease;
   padding-bottom: 0.5rem;
 }
+.header__nav__list a {
+  text-decoration: none;
+  color: #e1e1e1;
+}
 .header__nav__list:hover {
   color: #FFFFFF;
   font-weight: bold;

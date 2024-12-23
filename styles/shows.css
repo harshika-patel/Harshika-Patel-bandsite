@@ -1,1 +1,220 @@
-/*# sourceMappingURL=shows.css.map */
+@font-face {
+  font-family: "Nunito Sans";
+  src: url("../../assets/fonts/NunitoSans-Regular.woff") format("woff"), url("../../assets/fonts/Alternativefiles/NunitoSans-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Nunito Sans";
+  src: url("../../assets/fonts/NunitoSans-Medium.woff") format("woff"), url("../../assets/fonts/Alternativefiles/NunitoSans-Medium.woff2") format("woff2");
+  font-weight: 600;
+  font-style: medium;
+}
+@font-face {
+  font-family: "Nunito Sans";
+  src: url("../../assets/fonts/NunitoSans-Bold.woff") format("woff"), url("../../assets/fonts/Alternativefiles/NunitoSans-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: bold;
+}
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Nunito Sans", sans-serif;
+  font-family: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+  height: 100%;
+  background-size: cover;
+}
+
+h1 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+}
+
+h2 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+  font-weight: 600;
+}
+
+footer {
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+}
+
+button {
+  font-size: 0.625rem;
+  line-height: 1.25rem;
+  font-weight: 700;
+}
+
+p {
+  font-size: 0.9375rem;
+  line-height: 1.125rem;
+  font-weight: 400;
+}
+
+@media (min-width: 768px) {
+  body {
+    font-size: 0.875rem;
+    line-height: 1.375rem;
+    font-weight: 400;
+  }
+  h1 {
+    font-size: 3.75rem;
+    font-weight: 700;
+    line-height: 4.25rem;
+  }
+  h2 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    line-height: 2.75rem;
+  }
+  h3 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 500;
+  }
+  footer {
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.25rem;
+  }
+  button {
+    font-size: 0.75rem;
+    font-weight: 700;
+    line-height: 1.25rem;
+  }
+}
+.hero {
+  background-image: url("../assets/images/hero-shows.jpg");
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+}
+.hero__col1 {
+  display: flex;
+  flex-direction: column;
+}
+.hero__col1__text {
+  color: #FFFFFF;
+  margin-top: 1rem;
+  margin-left: 1.5rem;
+  margin-bottom: 1rem;
+  z-index: 2;
+  transform: translateY(-50%);
+}
+.hero__col1__heading {
+  top: 12%;
+  margin-left: 1.5rem;
+  line-height: normal;
+}
+.hero__col2 {
+  display: flex;
+  flex-direction: column;
+}
+.hero__col2__audio {
+  margin: 1rem;
+  z-index: 2;
+}
+
+@media (min-width: 768px) {
+  .hero__col2__audio {
+    width: 70%;
+    margin-top: 0;
+  }
+}
+@media (min-width: 1280px) {
+  .hero {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .hero__col1 {
+    width: 70%;
+    margin-right: 5rem;
+  }
+  .hero__col1__text {
+    margin-bottom: 1.5rem;
+    padding: 1rem 0;
+    padding-right: 1rem;
+  }
+  .hero__col2 {
+    width: 100%;
+  }
+}
+.shows__title {
+  margin-left: 1rem;
+  margin-top: 1.5rem;
+}
+
+.show__display {
+  display: flex;
+  flex-direction: column;
+}
+
+.show__date {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: #323232;
+}
+
+.show__venue {
+  font-size: 0.8125rem;
+  color: #323232;
+}
+
+.show__location {
+  font-size: 0.8125rem;
+  color: #323232;
+}
+
+.label {
+  color: #e1e1e1;
+  font-size: 0.875rem;
+  padding: 0.5rem;
+}
+
+.show__buy-ticket {
+  border-radius: 4px;
+  background-color: #323232;
+  height: 2.5rem;
+  color: #FFFFFF;
+  text-align: center;
+  margin: 1rem;
+}
+
+.show__buy-ticket:hover {
+  background-color: #000000;
+}
+
+@media (min-width: 768px) {
+  .show__display {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .shows-divider {
+    flex-direction: row;
+    stroke-width: 1px;
+    background-color: #e1e1e1;
+  }
+  .show__buy-ticket {
+    width: 9.375rem;
+    font-size: 0.875rem;
+  }
+}/*# sourceMappingURL=shows.css.map */

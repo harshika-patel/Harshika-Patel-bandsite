@@ -1,0 +1,127 @@
+@use "../styles/partials/mixins" as *;
+@use "../styles/partials/varibles" as *;
+@use "../styles/partials/globals" as *;
+@use "../styles/partials/fonts" as *;
+
+.hero {
+  background-image: url("../assets/images/hero-shows.jpg");
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  &__col1{
+    display: flex;
+    flex-direction: column;
+  
+  &__text {
+    color: $primary-white;
+    margin-top: 1rem;
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+    z-index: 2;
+    transform: translateY(-50%);
+  }
+  
+  &__heading {
+    top: 12%;
+    margin-left: 1.5rem;
+    line-height: normal;
+  }
+}
+  &__col2 {
+    display: flex;
+    flex-direction: column;
+    &__audio{
+  
+    margin: 1rem;
+    z-index: 2;
+    }
+  }
+}
+@include tablet{
+    .hero__col2{
+        &__audio{
+        width: 70%;
+        margin-top: 0;
+       
+    }
+}
+}
+@include desktop{
+.hero{
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    &__col1{
+        width: 70%;
+        margin-right: 5rem;
+        &__text{
+            margin-bottom: 1.5rem;
+            padding: 1rem 0;
+            padding-right:1rem;
+        }
+    }
+    &__col2{
+        width:100%
+    }
+}
+
+}
+// -----shows display-----
+.shows__title {
+  margin-left: 1rem;
+  margin-top: 1.5rem;
+}
+
+.show__display {
+  display: flex;
+  flex-direction: column;
+}
+
+.show__date {
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: $primary-black;
+}
+.show__venue {
+  font-size: 0.8125rem;
+  color: $primary-black;
+}
+.show__location {
+  font-size: 0.8125rem;
+  color: $primary-black;
+}
+
+.label {
+  color: $secondary-mercury;
+  font-size: 0.875rem;
+  padding: 0.5rem;
+}
+.show__buy-ticket {
+  border-radius: 4px;
+  background-color: $primary-black;
+  height: 2.5rem;
+  color: $primary-white;
+  text-align: center;
+  margin: 1rem;
+}
+.show__buy-ticket:hover {
+  background-color: #000000;
+}
+@include tablet {
+  .show__display {
+    flex-direction: row;
+    justify-content: space-between;
+    
+  }
+  .shows-divider{
+    flex-direction: row;
+    stroke-width: 1px;
+    background-color: $secondary-mercury;
+  }
+ 
+  .show__buy-ticket{
+    width: 9.375rem;
+    font-size: 0.875rem;
+  }
+  
+}
