@@ -17,12 +17,12 @@
     text-decoration: none;
   }
   &__nav {
-    &__lists {
+    &-lists {
       display: flex;
       flex-direction: row;
       justify-content: space-evenly;
     }
-    &__list {
+    &-list {
       color: $secondary-mercury;
       list-style: none;
       width: 50%;
@@ -30,12 +30,12 @@
       transition: border-bottom 0.3s ease;
       padding-bottom: 0.5rem;
     }
-    &__list a{
+    &-list a{
       text-decoration: none;
       color: $secondary-mercury;
     }
 
-    &__list:hover {
+    &-list:hover {
       color: $primary-white;
       font-weight: bold;
       border-bottom: 5px solid white;
@@ -303,10 +303,10 @@
   &__list {
     margin: 1rem;
     list-style: none;
-    &__title {
+    &-title {
       padding-bottom: 1rem;
     }
-    &__para {
+    &-para {
       padding-bottom: 1rem;
     }
   }
@@ -325,7 +325,7 @@
       padding-top: 1.5rem;
     }
     &__nav {
-      &__list {
+      &-list {
         margin-top: 1.5rem;
         padding: 2rem;
       }
