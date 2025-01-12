@@ -8,59 +8,79 @@
   background-size: cover;
   display: flex;
   flex-direction: column;
+  
   &__col1 {
     display: flex;
     flex-direction: column;
-
-    &__text {
+   
+  &__text {
       color: $primary-white;
-      margin-top: 1rem;
+      margin-top: 1.5rem;
       margin-left: 1.5rem;
-      margin-bottom: 1rem;
+      margin-bottom:1rem;
+      padding-top:1rem;
       z-index: 2;
       transform: translateY(-50%);
     }
 
     &__heading {
-      top: 12%;
+      top: 17%;
       margin-left: 1.5rem;
       line-height: normal;
+     
     }
+    @include tablet {
+      &__heading{
+        top:20%;
+        
+      }
+    }
+    
   }
   &__col2 {
     display: flex;
     flex-direction: column;
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    top:-5%;
     &__audio {
-      margin: 1rem;
+      width:90%;
+      height:70%;
       z-index: 2;
     }
   }
 }
+iframe{
+  top:30%;
+}
 @include tablet {
-  .hero__col2 {
-    &__audio {
-      width: 70%;
-      margin-top: 0;
-    }
+  .hero{
+    &__col2
+     {
+      width:80%;
+      top:1%;
+     }
   }
 }
 @include desktop {
-  .hero {
+  .hero{
     flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-    &__col1 {
-      width: 70%;
-      margin-right: 5rem;
-      &__text {
-        margin-bottom: 1.5rem;
-        padding: 1rem 0;
-        padding-right: 1rem;
+    &__col1{
+      margin:2.5rem;
+      &__heading {
+        top: 10%;
+       }
+    }
+    &__col2{
+      flex-direction: row;
+      &__audio {
+        margin-top:2.5rem;
+        width:60%;
+        height:50%;
+        z-index: 2;
       }
-    }
-    &__col2 {
-      width: 100%;
-    }
+     }
   }
 }
 // -----shows display-----
@@ -104,6 +124,7 @@
   height: 2.5rem;
   color: $primary-white;
   text-align: center;
+  padding: 0.5rem;
   margin: 1rem;
 }
 .show__buy-ticket:hover {
@@ -113,7 +134,8 @@
 .show__display:hover {
   background-color: $secondary-alabaster;
 }
-.show__display:active {
+.show__display.selected
+{
   background-color: $secondary-mercury;
 }
 @include tablet {
