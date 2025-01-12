@@ -1,7 +1,7 @@
-import { BandSiteApi } from './band-site-api.js';
+import { BandSiteApi } from "./band-site-api.js";
 
 // Initialize API
-const apiKey = "89762a8a-d2d6-4098-a81c-e571e503db5e"; 
+const apiKey = "89762a8a-d2d6-4098-a81c-e571e503db5e";
 const bandSiteApi = new BandSiteApi(apiKey);
 
 // Form and DOM Elements
@@ -23,7 +23,6 @@ function displayComments(note) {
   imgTag.classList.add("comment__profile-img");
   imgTag.alt = "Avatar";
 
-
   const h3Tag = document.createElement("h3");
   h3Tag.classList.add("comment__name");
   h3Tag.innerText = note.name;
@@ -38,17 +37,19 @@ function displayComments(note) {
   const pTag2 = document.createElement("p");
   pTag2.classList.add("comment__description");
   pTag2.innerText = note.comment;
-  
+
   const divTag3 = document.createElement("div");
   divTag3.classList.add("buttons");
 
-  const likeBtn=document.createElement("button");
+  const likeBtn = document.createElement("button");
   likeBtn.classList.add("buttons__like");
-  likeBtn.innerText="Like👍👍"
-  const deleteBtn=document.createElement("button");
-  deleteBtn.classList.add("buttons__delete");
-  deleteBtn.innerText="Delete🗑️🗑️"
+  likeBtn.innerText = `Like ${note.likes}👍👍`;
+  likeBtn.dataset.commentId = note.id;
 
+  const deleteBtn = document.createElement("button");
+  deleteBtn.classList.add("buttons__delete");
+  deleteBtn.innerText = "Delete🗑️🗑️";
+  deleteBtn.dataset.commentId = note.id;
 
   const divider = document.createElement("hr");
   divider.classList.add("comment-divider");
@@ -56,19 +57,18 @@ function displayComments(note) {
   cardElement.appendChild(divTag);
   cardElement.appendChild(divTag2);
   cardElement.appendChild(divTag3);
- 
+
   cardElement.appendChild(divider);
 
   divTag.appendChild(imgTag);
   divTag.appendChild(h3Tag);
   divTag.appendChild(pTag);
-   
+
   divTag2.appendChild(pTag2);
 
   divTag3.appendChild(likeBtn);
   divTag3.appendChild(deleteBtn);
 
- 
   return cardElement;
 }
 
@@ -80,6 +80,20 @@ const renderComments = async () => {
     comments.forEach((comment) => {
       const card = displayComments(comment);
       myCommentEL.appendChild(card);
+
+      // Add event listener to Like button
+      const likeBtn = card.querySelector(".buttons__like");
+      likeBtn.addEventListener("click", () => {
+        const commentId = likeBtn.dataset.commentId;
+        handleLikeComment(commentId, likeBtn);
+      });
+
+      // Add event listener to Delete button
+      const deleteBtn = card.querySelector(".buttons__delete");
+      deleteBtn.addEventListener("click", () => {
+        const commentId = deleteBtn.dataset.commentId;
+        handleDeleteComment(commentId);
+      });
     });
   } catch (error) {
     console.error("Error rendering comments:", error);
@@ -116,6 +130,28 @@ form.addEventListener("submit", async (e) => {
     console.error("Error posting comment:", error);
   }
 });
+
+const handleLikeComment = async (commentId, likeBtn) => {
+  try {
+    const comment = await bandSiteApi.getCommentById(commentId); // Fetch the specific comment
+    const newLikesCount = comment.likes + 1; // Increment likes count
+    await bandSiteApi.likeComment(commentId, newLikesCount);
+    likeBtn.innerText = `Like ${newLikesCount} 👍👍`;
+    renderComments();
+  } catch (error) {
+    console.error("Error liking comment:", error);
+  }
+};
+
+// Handle Delete Button Click
+const handleDeleteComment = async (commentId) => {
+  try {
+    await bandSiteApi.deleteComment(commentId);
+    renderComments();
+  } catch (error) {
+    console.error("Error deleting comment:", error);
+  }
+};
 
 // Initial Render
 renderComments();
