@@ -13,7 +13,7 @@
     display: flex;
     flex-direction: column;
    
-  &__text {
+  &-text {
       color: $primary-white;
       margin-top: 1.5rem;
       margin-left: 1.5rem;
@@ -23,14 +23,14 @@
       transform: translateY(-50%);
     }
 
-    &__heading {
+    &-heading {
       top: 17%;
       margin-left: 1.5rem;
       line-height: normal;
      
     }
     @include tablet {
-      &__heading{
+      &-heading{
         top:20%;
         
       }
@@ -44,16 +44,14 @@
     margin-bottom: 1.5rem;
     position: relative;
     top:-5%;
-    &__audio {
+    &-audio {
       width:90%;
       height:70%;
       z-index: 2;
     }
   }
 }
-iframe{
-  top:30%;
-}
+
 @include tablet {
   .hero{
     &__col2
@@ -68,13 +66,13 @@ iframe{
     flex-direction: row;
     &__col1{
       margin:2.5rem;
-      &__heading {
+      &-heading {
         top: 10%;
        }
     }
     &__col2{
       flex-direction: row;
-      &__audio {
+      &-audio {
         margin-top:2.5rem;
         width:60%;
         height:50%;
