@@ -332,6 +332,20 @@ p {
   margin-bottom: 1rem;
 }
 
+.buttons {
+  margin-left: 2.5rem;
+  margin-bottom: 1rem;
+}
+.buttons__like {
+  margin-right: 1rem;
+  padding: 0 0.2rem;
+  box-shadow: 10px 10px 15px 5px rgba(0, 0, 0, 0.3);
+}
+.buttons__delete {
+  padding: 0 0.2rem;
+  box-shadow: 10px 10px 15px 5px rgba(0, 0, 0, 0.3);
+}
+
 .comment-divider {
   stroke-width: 1px;
   background-color: #e1e1e1;

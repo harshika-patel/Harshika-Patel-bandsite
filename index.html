@@ -11,6 +11,7 @@
         rel="stylesheet">
     <link rel="stylesheet" href="./styles/partials/_mixins.scss">
     <link rel="stylesheet" href="./styles/bio.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <title>BandSite</title>
 </head>
 
@@ -21,7 +22,7 @@
         </a>
         <nav class="header__nav">
             <ul class="header__nav__lists">
-                <li class="header__nav__list">Biography</li>
+                <li class="header__nav__list"><a href="./index.html">Biography</a></li>
                 <li class="header__nav__list"><a href="./pages/shows.html">Shows</a></li>
             </ul>
         </nav>
@@ -134,6 +135,7 @@
         <p class="footer__para">Copyright The Bees Knees &copy; 2023 All Rights Reserved</p>
 
     </footer>
-    <script src="./scripts/index-page.js"></script>
+    <script type="module" src="./scripts/band-site-api.js"></script>
+    <script type="module" src="./scripts/index-page.js"></script>
 </body>
 </html>
